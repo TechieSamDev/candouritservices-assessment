@@ -65,11 +65,11 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center border h-screen">
-      <div>
+      <div className="md:w-96 w-full p-4">
         {message && (
           <p className="text-red-500 text-center px-3 py-1 rounded bg-red-100">{message}</p>
         )}
-        <form onSubmit={handleSearch} className="w-96 m-auto flex py-5">
+        <form onSubmit={handleSearch} className="m-auto flex py-5">
           <Input
             className="rounded-r-none"
             placeholder="Search Username"
