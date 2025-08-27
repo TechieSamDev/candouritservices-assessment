@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Candour IT Services Assessment
 
-## Getting Started
+A small assessment project built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.  
+The app allows you to search GitHub users, view their profile details, and see their latest repositories.
 
-First, run the development server:
+
+## 🚀 Tech Stack
+
+- **[Next.js 14](https://nextjs.org/)** - React framework for production
+- **[TypeScript](https://www.typescriptlang.org/)** - Static type checking
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable components built with Radix UI and Tailwind
+- **[Vitest](https://vitest.dev/)** - Fast unit testing framework
+- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Simple and complete testing utilities
+
+## 📦 Installation
+
+Make sure you have [Node.js](https://nodejs.org/) (version 18 or higher) and [pnpm](https://pnpm.io/) installed on your machine.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/TechieSamDev/candouritservices-assessment.git
+cd candouritservices-assessment
+
+# Install dependencies
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev
+```
 
-## Learn More
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To build the application for production:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Create production build
+pnpm build
 
-## Deploy on Vercel
+# Start production server
+pnpm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧪 Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses Vitest and React Testing Library for testing.
+
+### Running Tests
+
+```bash
+# Run tests once
+pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Run tests with coverage
+pnpm test:coverage
+
+# Run tests in UI mode
+pnpm test:ui
+```
+
+### Test Configuration
+
+The testing setup includes:
+- **Vitest** for fast unit and integration testing
+- **React Testing Library** for component testing
+- **jsdom** environment for DOM simulation
+- **@testing-library/jest-dom** for additional matchers
+
+Test files are placed alongside in a `__tests__` directory.
+
+## 📁 Folder Structure
+
+```
+├── public/                 # Static assets
+├── src/
+│   ├── app/               # Next.js 15 App Router pages
+│   ├── components/        # Reusable UI components
+│   │   └── ui/           # shadcn/ui components
+│   ├── lib/              # Utility functions and configurations
+│   ├── hooks/            # Custom React hooks
+│   ├── types/            # TypeScript type definitions
+│   └── styles/           # Global styles and Tailwind config
+├── tests/                 # Test utilities and setup
+├── next.config.js        # Next.js configuration
+├── tailwind.config.ts    # Tailwind CSS configuration
+├── tsconfig.json         # TypeScript configuration
+├── vitest.config.ts      # Vitest configuration
+└── package.json          # Project dependencies and scripts
+```
+
+## 🔧 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `pnpm dev` | Start development server |
+| `pnpm build` | Build for production |
+| `pnpm start` | Start production server |
+| `pnpm lint` | Run ESLint |
+| `pnpm lint:fix` | Fix ESLint errors |
+| `pnpm test` | Run tests |
+| `pnpm test:watch` | Run tests in watch mode |
+| `pnpm test:coverage` | Run tests with coverage |
+| `pnpm test:ui` | Run tests with UI |
+| `pnpm type-check` | Run TypeScript compiler check |
+
+## 🎨 Adding Components
+
+To add new shadcn/ui components:
+
+```bash
+# Add a specific component
+pnpx shadcn-ui@latest add button
+
+# Add multiple components
+pnpx shadcn-ui@latest add button card dialog
+```
