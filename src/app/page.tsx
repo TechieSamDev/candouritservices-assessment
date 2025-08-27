@@ -85,14 +85,14 @@ export default function Home() {
         <div className="min-h-96 p-5 border space-y-5">
           {isLoadingUser && <p>Loading User...</p>}
           {user && (
-            <div className="flex items-center gap-5 bg-gray-50 p-2 px-4">
+            <div className="flex items-center gap-5 bg-gray-200 rounded shadow p-2 px-4">
               <Avatar>
                 <AvatarImage src={user?.avatar_url} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <div className="w-full space-y-1">
-                <p className="">{user?.name}</p>
-                <p className="text-xs">{user?.bio}</p>
+                <p className="font-bold text-xl">{user?.name}</p>
+                <p className="text-xs text-gray-700">{user?.bio}</p>
                 <p className="text-xs">
                   {user.followers} Followers . {user.following} Following
                 </p>
@@ -101,7 +101,7 @@ export default function Home() {
           )}
 
           {isFetchingRepos && <p>Loading Repo...</p>}
-          {(repos?.length > 0 && user) && (
+          {repos?.length > 0 && user && (
             <div className="space-y-2">
               <p>
                 <b>{user?.public_repos}</b> Public Repositories
@@ -110,12 +110,14 @@ export default function Home() {
                 {repos.map((repo: Repo) => (
                   <ul
                     key={repo?.id}
-                    className="p-2 hover:bg-gray-200 bg-gray-100 rounded"
+                    className="hover:bg-gray-200 space-y-1 bg-gray-100 rounded"
                   >
-                    {repo?.name}
-                    <p className="text-xs text-gray-500">
-                      {repo?.description || 'No Description'}
-                    </p>
+                    <a className="p-3 block" target='_blank' href={repo?.html_url}>
+                      <h3 className="font-bold">{repo?.name}</h3>
+                      <p className="text-xs text-gray-500">
+                        {repo?.description || 'No Description'}
+                      </p>
+                    </a>
                   </ul>
                 ))}
               </ul>
