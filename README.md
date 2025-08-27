@@ -11,8 +11,6 @@ The app allows you to search GitHub users, view their profile details, and see t
 - **[TypeScript](https://www.typescriptlang.org/)** - Static type checking
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable components built with Radix UI and Tailwind
-- **[Vitest](https://vitest.dev/)** - Fast unit testing framework
-- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Simple and complete testing utilities
 
 ## 📦 Installation
 
@@ -73,60 +71,6 @@ pnpm start
 bun start
 ```
 
-## 🧪 Testing
-
-This project uses Vitest and React Testing Library for testing.
-
-### Running Tests
-
-```bash
-# Run tests once
-npm test
-# or
-yarn test
-# or
-pnpm test
-# or
-bun test
-
-# Run tests in watch mode
-npm run test:watch
-# or
-yarn test:watch
-# or
-pnpm test:watch
-# or
-bun run test:watch
-
-# Run tests with coverage
-npm run test:coverage
-# or
-yarn test:coverage
-# or
-pnpm test:coverage
-# or
-bun run test:coverage
-
-# Run tests in UI mode
-npm run test:ui
-# or
-yarn test:ui
-# or
-pnpm test:ui
-# or
-bun run test:ui
-```
-
-### Test Configuration
-
-The testing setup includes:
-- **Vitest** for fast unit and integration testing
-- **React Testing Library** for component testing
-- **jsdom** environment for DOM simulation
-- **@testing-library/jest-dom** for additional matchers
-
-Test files are placed alongside in a `__tests__` directory.
-
 ## 📁 Folder Structure
 
 ```
@@ -137,14 +81,9 @@ Test files are placed alongside in a `__tests__` directory.
 │   │   └── ui/           # shadcn/ui components
 │   ├── lib/              # Utility functions and configurations
 │   ├── hooks/            # Custom React hooks
-│   ├── types/            # TypeScript type definitions
-│   └── styles/           # Global styles and Tailwind config
-├── tests/                 # Test utilities and setup
-├── .env.local            # Environment variables (create from .env.example)
 ├── next.config.js        # Next.js configuration
 ├── tailwind.config.ts    # Tailwind CSS configuration
 ├── tsconfig.json         # TypeScript configuration
-├── vitest.config.ts      # Vitest configuration
 └── package.json          # Project dependencies and scripts
 ```
 
@@ -156,12 +95,6 @@ Test files are placed alongside in a `__tests__` directory.
 | `build` | Build for production |
 | `start` | Start production server |
 | `lint` | Run ESLint |
-| `lint:fix` | Fix ESLint errors |
-| `test` | Run tests |
-| `test:watch` | Run tests in watch mode |
-| `test:coverage` | Run tests with coverage |
-| `test:ui` | Run tests with UI |
-| `type-check` | Run TypeScript compiler check |
 
 > **Note:** Replace the package manager prefix (`npm run`, `yarn`, `pnpm`, `bun run`) with your preferred choice.
 
