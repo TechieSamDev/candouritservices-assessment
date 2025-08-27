@@ -101,7 +101,7 @@ export default function Home() {
           )}
 
           {isFetchingRepos && <p>Loading Repo...</p>}
-          {repos?.length > 0 && (
+          {(repos?.length > 0 && user) && (
             <div className="space-y-2">
               <p>
                 <b>{user?.public_repos}</b> Public Repositories
