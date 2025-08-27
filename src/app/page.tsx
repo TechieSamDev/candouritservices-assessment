@@ -67,7 +67,9 @@ export default function Home() {
     <div className="flex items-center justify-center border h-screen">
       <div className="md:w-96 w-full p-4">
         {message && (
-          <p className="text-red-500 text-center px-3 py-1 rounded bg-red-100">{message}</p>
+          <p className="text-red-500 text-center px-3 py-1 rounded bg-red-100">
+            {message}
+          </p>
         )}
         <form onSubmit={handleSearch} className="m-auto flex py-5">
           <Input
@@ -81,7 +83,7 @@ export default function Home() {
         </form>
 
         <div className="min-h-96 p-5 border space-y-5">
-          {isLoadingUser && 'Loading User...'}
+          {isLoadingUser && <p>Loading User...</p>}
           {user && (
             <div className="flex items-center gap-5 bg-gray-50 p-2 px-4">
               <Avatar>
@@ -98,7 +100,7 @@ export default function Home() {
             </div>
           )}
 
-          {isFetchingRepos && 'Loading Repo...'}
+          {isFetchingRepos && <p>Loading Repo...</p>}
           {repos?.length > 0 && (
             <div className="space-y-2">
               <p>
